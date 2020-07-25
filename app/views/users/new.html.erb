@@ -1,0 +1,28 @@
+<h1> Create new Account </h1>
+
+
+<%= form_for @user do |f| %>
+
+    <% if @user.errors.any? %>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+
+    <% end %>
+    <div class="field">
+        <%= f.label :username, "Enter Username" %>
+        <%= f.text_field :username, placeholder: "Sparky123" %>
+    </div>
+
+    <div class="field">
+        <%= f.label :password, "Enter Password" %>
+        <%= f.password_field :password %>
+    </div>
+
+
+    <%= f.submit "Submit" %>
+<% end %>
+
+<%= link_to 'Back', root_path %>
