@@ -1,0 +1,11 @@
+<h1><%= @event.description %></h1>
+
+<h3><%= @event.location %></h3>
+<h4><%= @event.date %></h4>
+
+<% id = @event.creator_id %>
+<% @user = User.find(id) %>
+<%= "Event Created by:"%>
+<%= @user.username %> </br>
+
+<%= link_to 'Back', root_path %>

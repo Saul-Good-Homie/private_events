@@ -5,7 +5,7 @@
   <%= link_to "Log Out", logout_path %>
 <% end %>
 
-<h1>Users</h1>
+<h1>All Events</h1>
 
 <table>
   <thead>
@@ -15,11 +15,11 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @events.each do |event| %>
       <tr>
-        <td><%= link_to user.username, user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to event.description, event %></td>
+        <td><%= event.location %></td>
+        <td><%= event.date %></td>
       </tr>
     <% end %>
   </tbody>

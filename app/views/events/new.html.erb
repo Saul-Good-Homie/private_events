@@ -1,0 +1,33 @@
+<h1> Create new Event </h1>
+
+
+<%= form_for @event do |f| %>
+
+    <% if @event.errors.any? %>
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+
+    <% end %>
+    <div class="field">
+        <%= f.label :description, "Enter Event Description" %>
+        <%= f.text_field :description, placeholder: "Dinner Party" %>
+    </div>
+
+    <div class="field">
+        <%= f.label :location, "Enter Location" %>
+        <%= f.text_field :location %>
+    </div>
+
+    <div class="field">
+    <%= f.label :date, "Enter Date" %>
+    <%= f.datetime_field :date %>
+</div>
+
+
+    <%= f.submit "Submit" %>
+<% end %>
+
+<%= link_to 'Back', root_path %>
