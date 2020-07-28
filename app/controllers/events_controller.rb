@@ -43,7 +43,6 @@ class EventsController < ApplicationController
         end
     end
 
-
   private
 
   def set_event
@@ -51,7 +50,7 @@ class EventsController < ApplicationController
   end
 
   def whitelisted_post_params
-      params.require(:event).permit(:description,:location, :date, :creator_id)
+      params.require(:event).permit(:description,:location, :date, :creator, :creator_id, :attendees)
   end
 
 end

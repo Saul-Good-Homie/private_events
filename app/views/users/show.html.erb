@@ -11,6 +11,17 @@
     </br>
   <% end %>
 
+<h4> Past Attended Events </h4>
+   <%= @user.past_events %>
+
+  
+
+
+  <h4> Upcoming and Attended Events </h4>
+<% @user.attended_events.each do |event| %>
+    <%= event.description %>
+  <% end %>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', root_path %>

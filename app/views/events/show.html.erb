@@ -3,9 +3,14 @@
 <h3><%= @event.location %></h3>
 <h4><%= @event.date %></h4>
 
-<% id = @event.creator_id %>
-<% @user = User.find(id) %>
-<%= "Event Created by:"%>
-<%= @user.username %> </br>
+<h4> <%= "Event Created by:"%></h4>
+
+<%= @event.creator.username %>
+
+
+<h4> Guest List </h4>
+<% @event.attendees.each do |attendee| %>
+    <%= attendee.username %>
+  <% end %>
 
 <%= link_to 'Back', root_path %>
